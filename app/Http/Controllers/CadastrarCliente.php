@@ -19,12 +19,12 @@ class CadastrarCliente extends Controller
         $cadastros->save();
 
          // $cadastros=Clientes::all();
-        return redirect()->route('cadastrar.cliente.view');
+        return redirect()->route('tabelaCliente.home');
 
 
     }
 
-    public function dashboard(){
+    public function tabelaCliente(){
 //dd('estou aqui');
         $cadastros=Clientes::all();
         //dd($cadastros);

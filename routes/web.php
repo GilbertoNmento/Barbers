@@ -20,7 +20,7 @@ Route::get('/', function () {
 }); 
 
 route::get('/cadastarCliente', [CadastrarCliente::class, 'cadastrarCliente'])->name('cadastrar.clientes');
-route::get('/tabelaCliente', [CadastrarCliente::class, 'dashboard'])->name('dashboard.home');
+route::get('/tabelaCliente', [CadastrarCliente::class, 'tabelaCliente'])->name('tabelaCliente.home');
 
 
 
@@ -34,9 +34,9 @@ Route::get('/cadastrar-barbeiro', function () {
 
 route::get('/cadastrarBarbeiro', [Cadas::class, 'cadastrarBarbeiro'])->name('cadastrar.barbeiro');
 
-//route::get('/dashboard', function(){ 
- //   return view('Dashboard');
-//})->name('Dashboard.home');
+route::get('/dashboard', function(){ 
+    return view('Dashboard');
+})->name('Dashboard.home');
 
 route::get('/valida/login', [Logins::class, 'validaUsuario'])->name('validar.usuario');
 
