@@ -82,7 +82,7 @@
                 <input type="text" id="nome" name="nome" placeholder="Digite o nome completo" required>
             </div>
             <div class="form-group">
-                <label for="telefone">Telefone:</label>
+                <label for="telefone">data:</label>
                 <input type="text" id="data" name="data" placeholder="Data de inicio..." required>
             </div>
             <div class="form-group">

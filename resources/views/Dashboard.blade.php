@@ -65,7 +65,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="#">Barbeiros</a>
+              <a class="nav-link active" aria-current="page" href="{{route('tabelaBarbeiro.home')}}">Barbeiros</a>
               {{-- <a class="nav-link" href="{{route('Dashboard.home')}}">home</a>
               <a class="nav-link" href="#">Pricing</a>
               <a class="nav-link" href="{{route('tabelaCliente.home')}}">Clientes</a> --}}

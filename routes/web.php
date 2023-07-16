@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CadastrarBarbers;
 use App\Http\Controllers\CadastrarCliente;
 use App\Http\Controllers\Logins;
 use Illuminate\Support\Facades\Route;
@@ -19,24 +20,39 @@ Route::get('/', function () {
    return view('Login');
 }); 
 
-route::get('/cadastarCliente', [CadastrarCliente::class, 'cadastrarCliente'])->name('cadastrar.clientes');
-route::get('/tabelaCliente', [CadastrarCliente::class, 'tabelaCliente'])->name('tabelaCliente.home');
+// Dashboard
+route::get('/dashboard', function(){ 
+    return view('Dashboard');
+})->name('Dashboard.home');
 
+//  Clientes
+route::get('/cadastarCliente', [CadastrarCliente::class, 'cadastrarCliente'])->name('cadastrar.clientes');
+
+route::get('/tabelaCliente', [CadastrarCliente::class, 'tabelaCliente'])->name('tabelaCliente.home');
 
 
 Route::get('/cadastrar-cliente', function () {
     return view('CadastrarCliente');
 })->name('cadastrar.cliente.view');
 
-Route::get('/cadastrar-barbeiro', function () {
+
+// Barbeiros
+
+
+route::get('/cadastrarBarbeiro', [CadastrarBarbers::class, 'CadastrarBarbeiro'])->name('cadastrar.barbeiro');
+
+route::get('/tela.cadastroBarbeiro', function(){
     return view('CadastrarBarbeiro');
-})->name('cadastrar.barbeiro.view');
+})->name('form.cadastrobarbeiro');
 
-route::get('/cadastrarBarbeiro', [Cadas::class, 'cadastrarBarbeiro'])->name('cadastrar.barbeiro');
+route::get('/tabelaBarbeiro', [CadastrarBarbers::class, 'tabelaBarbeiro'])->name('tabelaBarbeiro.home');
 
-route::get('/dashboard', function(){ 
-    return view('Dashboard');
-})->name('Dashboard.home');
+
+
+
+
+
+//login
 
 route::get('/valida/login', [Logins::class, 'validaUsuario'])->name('validar.usuario');
 

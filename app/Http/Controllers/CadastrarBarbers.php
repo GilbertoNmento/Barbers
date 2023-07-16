@@ -19,8 +19,17 @@ class CadastrarBarbers extends Controller
         $cadastros->save();
 
          // $cadastros=Clientes::all();
-        return redirect()->route('dashboard.home');
+        return redirect()->route('tabelaBarbeiro.home');
 
 
     }
+
+    public function tabelaBarbeiro(){
+        //dd('estou aqui');
+                $cadastros=Barbers::all();
+                //dd($cadastros);
+                return view('Barbeiros', compact('cadastros'));
+                
+            }
+        
 }
