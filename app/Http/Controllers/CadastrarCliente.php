@@ -31,4 +31,30 @@ class CadastrarCliente extends Controller
         return view('Clientes', compact('cadastros'));
         
     }
+
+    public function edit($id){
+        //dd($id);
+        $cliente = Clientes::where('id', $id)->first();
+        //dd($cadastro);
+        return view('clienteEdit', compact('cliente'));
+    }
+
+    public function update(Request $request){
+
+            //dd($request);
+        $data=[
+            'cpf'=>$request->cpf,
+            'nome'=>$request->nome,
+            'telefone'=>$request->telefone,
+        ];
+        Clientes::where('id',$request->id)->update($data);
+        return redirect()->route('tabelaCliente.home');
+
+    }
+
+    public function destroy($id){
+        //dd($id);
+        Clientes::where('id', $id)->delete();
+        return redirect()->route('tabelaCliente.home');
+    }
 }

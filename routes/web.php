@@ -35,6 +35,10 @@ Route::get('/cadastrar-cliente', function () {
     return view('CadastrarCliente');
 })->name('cadastrar.cliente.view');
 
+route::get('/cliente/editar/{id}', [CadastrarCliente::class,'edit'])->name('edit.form');
+route::put('/cliente/editar/update', [CadastrarCliente::class, 'update'])->name('cadastro.update');
+route::delete('/cliente/delete/{id}', [CadastrarCliente::class,'destroy'])->name('cadastro.cliente.delete');
+
 
 // Barbeiros
 
@@ -47,6 +51,9 @@ route::get('/tela.cadastroBarbeiro', function(){
 
 route::get('/tabelaBarbeiro', [CadastrarBarbers::class, 'tabelaBarbeiro'])->name('tabelaBarbeiro.home');
 
+route::get('/barbeiro/editar/{id}', [CadastrarBarbers::class, 'edit'])->name('barbeiroEdit.form');
+route::put('/barbeiro/editar/update', [CadastrarBarbers::class, 'update'])->name('barbeiro.update');
+route::delete('/{id}', [CadastrarBarbers::class,'destroy'])->name('cadastroBarbeiro.delete');
 
 
 
@@ -55,4 +62,6 @@ route::get('/tabelaBarbeiro', [CadastrarBarbers::class, 'tabelaBarbeiro'])->name
 //login
 
 route::get('/valida/login', [Logins::class, 'validaUsuario'])->name('validar.usuario');
+
+
 
