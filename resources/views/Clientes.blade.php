@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tabela clientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<style>
+  
+
+</style>
+    
 </head>
 <body>
   @include('nav')
@@ -13,7 +18,7 @@
       <h1 style="margin: 20px" >Tabela de clientes</h1>
 
 
-      <button><a href="{{ route('cadastrar.cliente.view') }}">Cadastrar cliente</a></button>
+      <button><a href="{{ route('cadastrar.cliente.view') }}">Cadastrar Cliente</a></button>
 <div class="container">
 <table class="table table-striped">
     <thead>

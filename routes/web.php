@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\agendamentoController;
 use App\Http\Controllers\CadastrarBarbers;
 use App\Http\Controllers\CadastrarCliente;
+use App\Http\Controllers\Horariob1Controller;
 use App\Http\Controllers\Logins;
 use Illuminate\Support\Facades\Route;
 
@@ -54,6 +56,19 @@ route::get('/tabelaBarbeiro', [CadastrarBarbers::class, 'tabelaBarbeiro'])->name
 route::get('/barbeiro/editar/{id}', [CadastrarBarbers::class, 'edit'])->name('barbeiroEdit.form');
 route::put('/barbeiro/editar/update', [CadastrarBarbers::class, 'update'])->name('barbeiro.update');
 route::delete('/{id}', [CadastrarBarbers::class,'destroy'])->name('cadastroBarbeiro.delete');
+
+
+
+//horários
+// route::any('/horarios/lista', function(){
+//     return view ('listahorarios');
+// })->name('listahorario.home');
+
+route::any('/agendamento/cadastrar', [agendamentoController::class, 'agendamento'])->name('agendamento.cadastrar');
+
+route::any('/agendamento/cadastrado',[agendamentoController::class, 'cadastrarAgendamento'])->name('cadastrar.agendamento');
+
+route::any('/tabela/horario', [agendamentoController::class, 'tabelaHorarios'])->name('tabela.horarios');
 
 
 
