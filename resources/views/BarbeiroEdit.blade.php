@@ -1,4 +1,7 @@
-@include('nav')
+@include('nav2')
+
+
+<h1>Editar</h1>
 
 <form action="{{route('barbeiro.update')}}" method="post">
     @csrf

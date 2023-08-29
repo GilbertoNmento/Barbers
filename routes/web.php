@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-   return view('Login');
+   return view('ViewCliente');
 }); 
 
 // Dashboard
@@ -77,6 +77,17 @@ route::any('/tabela/horario', [agendamentoController::class, 'tabelaHorarios'])-
 //login
 
 route::get('/valida/login', [Logins::class, 'validaUsuario'])->name('validar.usuario');
+
+//view cliente
+route::any('/view/web/cliente', function(){
+    return view('ViewCliente');
+})->name('view.web');
+
+route::any('/view/contatos', function (){
+    return view('contatos');
+})->name('/contatos/view');
+
+//view serviços, contatos e agendamentos
 
 
 

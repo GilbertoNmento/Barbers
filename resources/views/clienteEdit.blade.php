@@ -1,8 +1,8 @@
-@extends('nav')
+@extends('nav2')
 
 @section('conteudo')
 
-    <p>{{$cliente->id}}</p>
+    {{-- <p>{{$cliente->id}}</p> --}}
     <H1>Editar</H1>
     <form action="{{route('cadastro.update')}}" method="post">
         @csrf
